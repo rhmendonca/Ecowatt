@@ -1,8 +1,48 @@
 # Link do video no Youtube: https://www.youtube.com/watch?v=AF5maz4EbYY
 
+Node-RED
+![image](https://github.com/user-attachments/assets/6fafdf95-b921-4cea-b3ab-e791f4f1e164)
+
+Dashboard
+
+![image](https://github.com/user-attachments/assets/a132db36-26a0-483b-b3cc-032ad66f6c82)
 
 
-# EcoWatt - Global Solution H2’ 24
+---
+Como replicar e testar a solução:
+
+# Requisitos
+
+Antes de rodar o projeto, verifique se você tem as seguintes ferramentas e dependências instaladas:
+
+- *Visual Studio Code (VSCode)*: Para editar e gerenciar o código.
+  - [Download VSCode](https://code.visualstudio.com/)
+  
+- *PlatformIO*: Extensão para o VSCode que facilita o desenvolvimento de projetos embarcados com ESP32.
+  - [Instalar PlatformIO](https://platformio.org/install/ide?install=vscode)
+
+- *Wokwi Simulator*: Usado para simular os circuitos e o comportamento do ESP32.
+  - [Wokwi - Simulador de Circuitos](https://wokwi.com/)
+
+---
+Bibliotecas do Projeto
+WiFi: Para conectar o ESP32 à rede Wi-Fi.
+PubSubClient: Para comunicação MQTT.
+DHT: Para utilizar o sensor DHT22.
+
+---
+Para instalar as bibliotecas no PlatformIO:
+
+Abra o VSCode.
+Vá para o painel do PlatformIO.
+Em PIO Home, clique em Libraries e procure pelas bibliotecas:
+WiFi (já incluída no pacote do ESP32)
+PubSubClient (para MQTT)
+DHT sensor library (para trabalhar com o DHT22)
+
+ANTES DE EXECUTAR, FAÇA A BUILD DESTE PROJETO
+---
+
 
 **Energia para um futuro sustentável**
 
