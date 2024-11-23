@@ -1,0 +1,588 @@
+[
+    {
+        "id": "16ebf75bc4b46442",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "50a6d03992d934cd",
+        "type": "ui_gauge",
+        "z": "16ebf75bc4b46442",
+        "name": "Energia",
+        "group": "e33beed98ba745e0",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Consumo de Energia",
+        "label": "Amperes",
+        "format": "{{value}} A",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "200",
+        "diff": false,
+        "className": "",
+        "x": 5920,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7cbf331ed60e84a4",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Receber Energia",
+        "topic": "iot/energy",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "d51b1c2a69bf9f60",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 5500,
+        "y": 540,
+        "wires": [
+            [
+                "50a6d03992d934cd",
+                "6ee92a8fd76792ea"
+            ]
+        ]
+    },
+    {
+        "id": "49e795c52e140b68",
+        "type": "ui_chart",
+        "z": "16ebf75bc4b46442",
+        "name": "Temperatura",
+        "group": "e33beed98ba745e0",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "Gráfico de Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Sem dados",
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "outputs": 1,
+        "x": 5830,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ccb9abaad10c6424",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Temperatura (MQTT)",
+        "topic": "iot/temp",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "d51b1c2a69bf9f60",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 5520,
+        "y": 700,
+        "wires": [
+            [
+                "49e795c52e140b68",
+                "22a9db42e3895f0b"
+            ]
+        ]
+    },
+    {
+        "id": "97730f461fb5570b",
+        "type": "ui_chart",
+        "z": "16ebf75bc4b46442",
+        "name": "Umidade",
+        "group": "e33beed98ba745e0",
+        "order": 3,
+        "width": 6,
+        "height": 6,
+        "label": "Gráfico de Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Sem dados",
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "outputs": 1,
+        "x": 5780,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbadb361b94705e3",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Umidade (MQTT)",
+        "topic": "iot/hum",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "d51b1c2a69bf9f60",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 5500,
+        "y": 840,
+        "wires": [
+            [
+                "97730f461fb5570b",
+                "6e4ef6e11d56358e"
+            ]
+        ]
+    },
+    {
+        "id": "6ee92a8fd76792ea",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5720,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "22a9db42e3895f0b",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5800,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6e4ef6e11d56358e",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 5800,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "2cea3b7a4f80f41f",
+        "type": "ui_gauge",
+        "z": "16ebf75bc4b46442",
+        "name": "Consumo de Energia",
+        "group": "397d75742acc3b60",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Consumo de Energia",
+        "label": "Amperes",
+        "format": "{{value}} A",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 1200,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6238a42455d04c92",
+        "type": "ui_chart",
+        "z": "16ebf75bc4b46442",
+        "name": "Temperatura Atual",
+        "group": "c2a2755563bf685b",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "label": "Gráfico de Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Sem dados",
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "outputs": 1,
+        "x": 1210,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "206ef861ccc1c02d",
+        "type": "ui_chart",
+        "z": "16ebf75bc4b46442",
+        "name": "Umidade Atual",
+        "group": "c2a2755563bf685b",
+        "order": 3,
+        "width": 6,
+        "height": 6,
+        "label": "Gráfico de Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Sem dados",
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "outputs": 1,
+        "x": 1160,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efc866a8b843ed1e",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Energia (MQTT)",
+        "topic": "iot/energy",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "broker_mosquitto",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 760,
+        "y": 160,
+        "wires": [
+            [
+                "2cea3b7a4f80f41f",
+                "25fa54fd87b7f1f4"
+            ]
+        ]
+    },
+    {
+        "id": "23410667185ec975",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Temperatura (MQTT)",
+        "topic": "iot/temp",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "broker_mosquitto",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "6238a42455d04c92",
+                "b8efe838a2464b5a"
+            ]
+        ]
+    },
+    {
+        "id": "3d456e9c9a3a4bb8",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Umidade (MQTT)",
+        "topic": "iot/hum",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "broker_mosquitto",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "206ef861ccc1c02d",
+                "b1eb075cdd965758"
+            ]
+        ]
+    },
+    {
+        "id": "d506e3217e4094e5",
+        "type": "mqtt in",
+        "z": "16ebf75bc4b46442",
+        "name": "Consumo Simulado (MQTT)",
+        "topic": "iot/devices",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "broker_mosquitto",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "26c0972a8d8a4293"
+            ]
+        ]
+    },
+    {
+        "id": "26c0972a8d8a4293",
+        "type": "function",
+        "z": "16ebf75bc4b46442",
+        "name": "Parse Dados Simulados",
+        "func": "let simulatedData = msg.payload.split(',');\nlet data = {};\n\nsimulatedData.forEach(function (item) {\n    let parts = item.split(':');\n    data[parts[0]] = parseFloat(parts[1]);\n});\n\nmsg.payload = data;\nreturn msg;",
+        "outputs": 1,
+        "x": 950,
+        "y": 460,
+        "wires": [
+            [
+                "33e9b5445ff0de4d"
+            ]
+        ]
+    },
+    {
+        "id": "33e9b5445ff0de4d",
+        "type": "ui_gauge",
+        "z": "16ebf75bc4b46442",
+        "name": "Consumo Simulado",
+        "group": "b5b7bc3ef4fd5162",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Consumo Simulado (W)",
+        "label": "W",
+        "format": "{{value}} W",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1000",
+        "seg2": "3000",
+        "diff": false,
+        "className": "",
+        "x": 1310,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "25fa54fd87b7f1f4",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b8efe838a2464b5a",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b1eb075cdd965758",
+        "type": "debug",
+        "z": "16ebf75bc4b46442",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e33beed98ba745e0",
+        "type": "ui_group",
+        "name": "EcoWatt - Energia",
+        "tab": "dcbc4264c019b204",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d51b1c2a69bf9f60",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "397d75742acc3b60",
+        "type": "ui_group",
+        "name": "EcoWatt - Energia",
+        "tab": "7c05457586489568",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c2a2755563bf685b",
+        "type": "ui_group",
+        "name": "EcoWatt - Temperatura/Umidade",
+        "tab": "7c05457586489568",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "broker_mosquitto",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true
+    },
+    {
+        "id": "b5b7bc3ef4fd5162",
+        "type": "ui_group",
+        "name": "EcoWatt - Consumo Simulado",
+        "tab": "7c05457586489568",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dcbc4264c019b204",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7c05457586489568",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
