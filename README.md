@@ -41,6 +41,10 @@ PubSubClient (para MQTT)
 DHT sensor library (para trabalhar com o DHT22)
 
 ANTES DE EXECUTAR, FAÇA A BUILD DESTE PROJETO
+
+---
+O código Json do Node-RED esta em um arquivo no codigo, para replicar é necessário apenas importar o codigo json no Node-RED.
+
 ---
 
 
